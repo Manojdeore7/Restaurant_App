@@ -1,5 +1,6 @@
 import classes from "./AwailableMeals.module.css";
-
+import Card from "../UI/card";
+import MealItom from "./MealItom/MealItom";
 const Meals = [
   {
     id: "m1",
@@ -28,10 +29,19 @@ const Meals = [
 ];
 
 function AwailableMeals() {
-  const Dummy_Meals = Meals.map((e) => <li>{e.name}</li>);
+  const Dummy_Meals = Meals.map((e) => (
+    <MealItom
+      key={e.id}
+      name={e.name}
+      description={e.description}
+      price={e.price}
+    />
+  ));
   return (
     <section className={classes.meals}>
-      <ul>{Dummy_Meals}</ul>
+      <Card>
+        <ul>{Dummy_Meals}</ul>
+      </Card>
     </section>
   );
 }
