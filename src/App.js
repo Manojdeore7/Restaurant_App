@@ -1,17 +1,11 @@
-import Cart from "./components/Cart/cart";
-import logo from "./logo.png";
-import "./App.css";
+import { Fragment } from "react";
+import Header from "./components/layout/Header";
+
 function App() {
   return (
-    <div>
-      <div className="header">
-        <h2>ReactMeal</h2>
-        <Cart />
-      </div>
-      <div>
-        <img src={logo} />
-      </div>
-    </div>
+    <Fragment>
+      <Header></Header>
+    </Fragment>
   );
 }
 
