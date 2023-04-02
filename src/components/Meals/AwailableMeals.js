@@ -32,9 +32,11 @@ function AwailableMeals() {
   const Dummy_Meals = Meals.map((e) => (
     <MealItom
       key={e.id}
+      id={e.id}
       name={e.name}
       description={e.description}
       price={e.price}
+      item={e}
     />
   ));
   return (
