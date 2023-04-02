@@ -9,6 +9,7 @@ function MealItom(props) {
   function total(amountValue) {
     console.log(amountValue);
     cacrtcxt.addItem({
+      name: props.name,
       id: props.id,
       price: props.price,
       key: props.id,
