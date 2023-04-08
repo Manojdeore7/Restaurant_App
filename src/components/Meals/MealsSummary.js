@@ -1,18 +1,54 @@
 import classes from "./MealSummary.module.css";
-
+import CartContext1 from "../../store/cart-context1";
+import { useContext, useState } from "react";
 const MealsSummary = () => {
+  let cartcxt = useContext(CartContext1);
+  let [name, setName] = useState("");
+  let [price, setPrice] = useState("");
+  let [desc, setDesc] = useState("");
+
+  function add(e) {
+    e.preventDefault();
+    let obj = {
+      id: "m6",
+      name: name,
+      description: desc,
+      price: price,
+    };
+
+    cartcxt.addItem(obj);
+    setDesc("");
+    setName("");
+    setPrice("");
+  }
   return (
-    <section className={classes.summary}>
-      <h2>Delicious Food, Delivered To You</h2>
-      <p>
-        Choose your favorite meal from our broad selection of available meals
-        and enjoy a delicious lunch or dinner at home.
-      </p>
-      <p>
-        All our meals are cooked with high-quality ingredients, just-in-time and
-        of course by experienced chefs!
-      </p>
-    </section>
+    <form className={classes.summary} onSubmit={add}>
+      <label>Medicines Name</label>
+      <input
+        value={name}
+        type="text"
+        onChange={(event) => {
+          setName(event.target.value);
+        }}
+      ></input>
+      <label>Medicines Description</label>
+      <input
+        type="text"
+        value={desc}
+        onChange={(event) => {
+          setDesc(event.target.value);
+        }}
+      ></input>
+      <label>Medicines Price</label>
+      <input
+        value={price}
+        type="number"
+        onChange={(event) => {
+          setPrice(event.target.value);
+        }}
+      ></input>
+      <button type="submit">Add in List</button>
+    </form>
   );
 };
 
