@@ -5,14 +5,12 @@ import { useContext, useRef, useState } from "react";
 
 function MealItomForm(props) {
   let addRef = useRef();
-  let [check, setCheck] = useState(false);
+
   function submitHandler(e) {
     e.preventDefault();
 
     let total = +addRef.current.value;
-    if (total > 0) {
-      setCheck(true);
-    }
+
     props.fun(total);
   }
   return (

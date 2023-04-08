@@ -1,5 +1,5 @@
 import classes from "./MealSummary.module.css";
-import CartContext1 from "../../store/cart-context1";
+import { CartContext1 } from "../../store/cart-context";
 import { useContext, useState } from "react";
 const MealsSummary = () => {
   let cartcxt = useContext(CartContext1);

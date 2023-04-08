@@ -1,13 +1,13 @@
 import classes from "./AwailableMeals.module.css";
 import Card from "../UI/card";
 import MealItom from "./MealItom/MealItom";
-import CartContext1 from "../../store/cart-context1";
+import { CartContext1 } from "../../store/cart-context";
 import { useContext } from "react";
 
 function AwailableMeals() {
-  let CartCxt = useContext(CartContext1);
-
-  const Dummy_Meals = CartCxt.items.map((e) => (
+  const cartt = useContext(CartContext1);
+  console.log(cartt.items);
+  const Dummy_Meals = cartt.items.map((e) => (
     <MealItom
       key={e.id}
       id={e.id}
