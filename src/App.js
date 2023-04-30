@@ -3,7 +3,7 @@ import Header from "./components/layout/Header";
 import Meals from "./components/Meals/meals";
 import Cart from "./components/cart/cart";
 import CartProvider from "./store/cartProvider";
-import Child from "./child";
+
 function App() {
   const [show, setShow] = useState(false);
   function showPage() {

@@ -6,7 +6,7 @@ import { useContext } from "react";
 
 function AwailableMeals() {
   const cartt = useContext(CartContext1);
-  console.log(cartt.items);
+
   const Dummy_Meals = cartt.items.map((e) => (
     <MealItom
       key={e.id}
@@ -14,6 +14,9 @@ function AwailableMeals() {
       name={e.name}
       description={e.description}
       price={e.price}
+      small={e.small}
+      large={e.large}
+      medium={e.medium}
       item={e}
     />
   ));

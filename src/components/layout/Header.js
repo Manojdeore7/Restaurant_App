@@ -6,11 +6,11 @@ function Header(props) {
   return (
     <Fragment>
       <header className={classes.header}>
-        <h2>ReactMedicine</h2>
+        <h2>BuyGreatShoues</h2>
         <HeaderCartButton onOpen={props.onOpen} />
       </header>
       <div className={classes["main-image"]}>
-        <img src="https://t4.ftcdn.net/jpg/02/81/42/77/360_F_281427785_gfahY8bX4VYCGo6jlfO8St38wS9cJQop.jpg" />
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8&w=1000&q=80" />
       </div>
     </Fragment>
   );

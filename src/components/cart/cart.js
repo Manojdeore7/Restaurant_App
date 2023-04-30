@@ -21,8 +21,12 @@ function Cart(props) {
               </div>
               <div id="k">
                 <div className={classes.m}>
-                  <h5>Amount</h5>
-                  <h5>{e.amount}</h5>
+                  <h5>L</h5>
+                  <h5>{e.large}||</h5>
+                  <h5>M</h5>
+                  <h5>{e.medium}||</h5>
+                  <h5>S</h5>
+                  <h5>{e.small}</h5>
                 </div>
                 <div className={classes.actions}>
                   <button

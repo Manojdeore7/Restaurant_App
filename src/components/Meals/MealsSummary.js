@@ -6,6 +6,9 @@ const MealsSummary = () => {
   let [name, setName] = useState("");
   let [price, setPrice] = useState("");
   let [desc, setDesc] = useState("");
+  let [L, setL] = useState("");
+  let [M, setM] = useState("");
+  let [S, setS] = useState("");
 
   function add(e) {
     e.preventDefault();
@@ -14,16 +17,22 @@ const MealsSummary = () => {
       name: name,
       description: desc,
       price: price,
+      long: L,
+      small: S,
+      medium: M,
     };
 
     cartcxt.addItem(obj);
     setDesc("");
     setName("");
     setPrice("");
+    setM("");
+    setS("");
+    setL("");
   }
   return (
     <form className={classes.summary} onSubmit={add}>
-      <label>Medicines Name</label>
+      <label>Shoe Name</label>
       <input
         value={name}
         type="text"
@@ -31,7 +40,7 @@ const MealsSummary = () => {
           setName(event.target.value);
         }}
       ></input>
-      <label>Medicines Description</label>
+      <label> Description</label>
       <input
         type="text"
         value={desc}
@@ -39,12 +48,40 @@ const MealsSummary = () => {
           setDesc(event.target.value);
         }}
       ></input>
-      <label>Medicines Price</label>
+      <label> Price</label>
       <input
         value={price}
         type="number"
         onChange={(event) => {
           setPrice(event.target.value);
+        }}
+      ></input>
+      <label>
+        Quantity awailable
+        <br></br>L
+      </label>
+
+      <input
+        value={L}
+        type="number"
+        onChange={(event) => {
+          setL(event.target.value);
+        }}
+      ></input>
+      <lable>M</lable>
+      <input
+        value={M}
+        type="number"
+        onChange={(event) => {
+          setM(event.target.value);
+        }}
+      ></input>
+      <lable>S</lable>
+      <input
+        value={S}
+        type="number"
+        onChange={(event) => {
+          setS(event.target.value);
         }}
       ></input>
       <button type="submit">Add in List</button>
